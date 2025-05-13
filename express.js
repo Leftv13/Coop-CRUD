@@ -1,6 +1,6 @@
 const express = require(`express`)
 
-const routerMaths = require('./routers/maths.js');
+//const routerMaths = require('./routers/maths.js');
 
 const routerProgramming = require('./routers/programming.js')
 
@@ -16,7 +16,7 @@ console.log(infoCourses);
 
 //Routers
 app.use("/api/courses/programming", routerProgramming);
-app.use("/api/courses/maths", routerMaths);
+//app.use("/api/courses/maths", routerMaths);
 
 //Routing
 
