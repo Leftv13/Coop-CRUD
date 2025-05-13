@@ -1,0 +1,14 @@
+// This file contains auxiliary functions for sorting courses
+
+const sortByViewsAscending = (courses) => {
+  return courses.sort((a, b) => a.views - b.views);
+};
+
+const sortByViewsDescending = (courses) => {
+  return courses.sort((a, b) => b.views - a.views);
+};
+
+module.exports = {
+  sortByViewsAscending: sortByViewsAscending,
+  sortByViewsDescending: sortByViewsDescending,
+};
