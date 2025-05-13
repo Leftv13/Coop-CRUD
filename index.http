@@ -1,0 +1,46 @@
+#Create Read Update Delete
+#Post   
+
+#This is for creating an object
+POST http://127.0.0.1:3000/api/courses/programming/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 4,
+    "title":"Learn CSS!",
+    "language": "css",
+    "views": 77777,
+    "level": "basic"
+}
+
+
+###
+
+#This is for editing completely an object
+PUT  http://127.0.0.1:3000/api/courses/programming/2 HTTP/1.1
+Content-Type: application/json
+
+{
+   "id": 2,
+    "title":"Learn PHP!",
+    "language": "php",
+    "views": 777177,
+    "level": "intermediate"
+}
+
+###
+
+# This is for partially editing an object
+PATCH http://127.0.0.1:3000/api/courses/programming/2
+Content-Type: application/json
+
+{
+    "views": 600,
+    "level": "Super mega pro"
+}
+
+###
+#This is for deleting an object
+DELETE http://127.0.0.1:3000/api/courses/programming/1 HTTP/1.1
+
+
