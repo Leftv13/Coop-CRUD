@@ -45,7 +45,7 @@ Follow these steps to clone our repository:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [your repository URL here]
+    git clone [repository URL here]
     cd [repository name]
     ```
 
@@ -72,10 +72,16 @@ Follow these steps to clone our repository:
     - **`GET /api/courses/programming/:language/:level`**: Retrieves the list of programming courses filtered by language and level (e.g., `/api/courses/programming/python/basic`).
     - **`POST /api/courses/programming`**: Creates a new programming course (requires a request body in JSON format).
     - **`PATCH /api/courses/programming/:id`**: Partially updates an existing programming course with the specified ID (requires a request body in JSON format).
+    - **`DELETE /api/courses/programming/:id`**: Deletes an existing programming course with the specified ID.
     - **`GET /api/courses/maths`**: Retrieves the list of all mathematics courses.
     - **`GET /api/courses/maths/:subject`**: Retrieves the list of mathematics courses filtered by the specified subject (e.g., `/api/courses/maths/algebra`).
     - **`GET /api/courses/maths/:subject/:level`**: Retrieves the list of mathematics courses filtered by subject and level (e.g., `/api/courses/maths/calculus/intermediate`).
-    - **`GET /api/courses/maths/:subject/:level?sort=views`**: Retrieves the list of mathematics courses filtered by subject and level, optionally sorted by the number of views.
+    - **`GET /api/courses/maths/:subject?orderascending=views`**: Retrieves the list of mathematics courses filtered by subject, sorted by the number of views in ascending order.
+    - **`GET /api/courses/maths/:subject?orderdescending=views`**: Retrieves the list of mathematics courses filtered by subject, sorted by the number of views in descending order.
+    - **`POST /api/courses/maths`**: Creates a new mathematics course (requires a request body in JSON format).
+    - **`PATCH /api/courses/maths/:id`**: Partially updates an existing mathematics course with the specified ID (requires a request body in JSON format).
+    - **`DELETE /api/courses/maths/:id`**: Deletes an existing mathematics course with the specified ID.
+
 
 3.  **Request Examples (with REST Client or using the Index.http file):**
 
@@ -113,13 +119,13 @@ Follow these steps to clone our repository:
 
     ###
 
-    # Get algebra mathematics courses
+    # Get algebra mathematics courses 
     GET http://localhost:3000/api/courses/maths/algebra
 
     ###
 
-    # Get intermediate calculus courses sorted by views
-    GET http://localhost:3000/api/courses/maths/calculus/intermediate?sort=views
+    # Get algebra courses sorted by the number of views in ascending order
+    GET http://localhost:3000/api/courses/maths/algebra?orderascending=views
     ```
 
 ## Project Structure
@@ -129,6 +135,7 @@ Follow these steps to clone our repository:
 ├── routers/
 │   ├── maths.js          # Routes for mathematics courses
 │   └── programming.js    # Routes for programming courses
+├── auxiliaryFunctions.js # Auxiliary functions for sorting
 ├── express.js                # Main server file
 ├── package.json
 ├── package-lock.json
