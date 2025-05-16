@@ -9,7 +9,7 @@ POST http://127.0.0.1:3000/api/courses/programming/ HTTP/1.1
 Content-Type: application/json
 
 {
-    "id": 4,
+    "id": 10,
     "title":"Learn CSS!",
     "language": "css",
     "views": 77777,
@@ -55,7 +55,7 @@ Content-Type: application/json
     "id": 10,
     "title": "Diferential Equations",
     "subject": "calculus",
-    "views": "12340",
+    "views": 12340,
     "level": "Advanced"
 }
 
@@ -68,7 +68,7 @@ Content-Type: application/json
     "id": 4,
     "title": "Linear Equations",
     "subject": "algebra",
-    "views": "18350",
+    "views": 18350,
     "level": "Basic"
 }
 
